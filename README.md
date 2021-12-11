@@ -9,3 +9,23 @@
 [![Infomaniak](https://badgen.net/badge/Infomaniak/Affiliated%20link?icon=K)](https://www.infomaniak.com/goto/fr/home?utm_term=6151f412daf35)
 [![Express VPN](https://badgen.net/badge/Express%20VPN/Affiliated%20link?icon=K)](https://www.xvinlink.com/?a_fid=TontonJo)  
 
+## Usage:
+### Generate a pair of rsa keys in the folder of your choice
+```shell
+ssh-keygen -t rsa -b 4096 -C "name of user"
+```
+- Deploy your public key on the servers you want to connect using private key
+```shell
+ssh-copy-id -i "/root/jo_rsa.pub" root@127.0.0.1
+```
+### In case of need, you can specify the port of the remote server
+```shell
+ssh-copy-id -i "/root/jo_rsa.pub" -p 22 root@10.0.0.41
+```
+
+## Disable password login for root
+```shell
+nano /etc/ssh/sshd_config
+```
+- set
+PermitRootLogin prohibit-password
