@@ -14,13 +14,18 @@
 ```shell
 ssh-keygen -t rsa -b 4096 -C "name of user"
 ```
+- Alternatively, specifiy outpup path directly in command
+```shell
+ssh-keygen -t rsa -b 4096 -C "name of user" -f /root/user_rsa
+```
+
 - Deploy your public key on the servers you want to connect using private key
 ```shell
-ssh-copy-id -i "/root/jo_rsa.pub" root@127.0.0.1
+ssh-copy-id -i "/root/user_rsa.pub" root@127.0.0.1
 ```
 ### In case of need, you can specify the port of the remote server
 ```shell
-ssh-copy-id -i "/root/jo_rsa.pub" -p 22 root@10.0.0.41
+ssh-copy-id -i "/root/user_rsa.pub" -p 22 root@10.0.0.41
 ```
 
 ## Disable password login for root
