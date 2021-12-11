@@ -14,12 +14,12 @@
 ```shell
 ssh-keygen -t rsa -b 4096 -C "name of user"
 ```
-- Alternatively, specifiy outpup path directly in command
+- - Alternatively, specifiy outpup path directly in command
 ```shell
 ssh-keygen -t rsa -b 4096 -C "name of user" -f /root/user_rsa
 ```
 
-- Deploy your public key on the servers you want to connect using private key
+### Deploy your public key on the servers you want to connect using private key
 ```shell
 ssh-copy-id -i "/root/user_rsa.pub" root@127.0.0.1
 ```
