@@ -14,7 +14,7 @@
 ```shell
 ssh-keygen -t rsa -b 4096 -C "name of user"
 ```
-- Alternatively, specifiy outpup path directly in command
+- Alternatively, specifiy output path directly in command
 ```shell
 ssh-keygen -t rsa -b 4096 -C "name of user" -f /root/user_rsa
 ```
